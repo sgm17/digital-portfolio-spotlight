@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import Team from "./pages/Team";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Podcasts from "./pages/Podcasts";
 import NotFound from "./pages/NotFound";
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="/team" element={<Team />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/podcasts" element={<Podcasts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
