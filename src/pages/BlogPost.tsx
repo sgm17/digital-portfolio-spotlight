@@ -1,14 +1,14 @@
-
-import { useParams } from 'react-router-dom';
-import Header from '../components/Header';
+import { useParams } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "@/components/Footer";
 
 const BlogPost = () => {
   const { id } = useParams();
-  
+
   // Mock blog post data - in a real app this would come from an API
   const blogPosts = {
-    '1': {
-      title: 'Building Scalable Flutter Applications',
+    "1": {
+      title: "Building Scalable Flutter Applications",
       content: `
         <p>Flutter has revolutionized mobile app development by providing a single codebase that works across multiple platforms. In this comprehensive guide, we'll explore the best practices for creating Flutter applications that can handle millions of users.</p>
         
@@ -29,13 +29,13 @@ const BlogPost = () => {
         
         <p>By following these principles, you'll be well on your way to building Flutter applications that can handle millions of users while maintaining excellent performance and user experience.</p>
       `,
-      date: '2024-01-15',
-      readTime: '8 min read',
-      category: 'Development',
-      author: 'Alex Rodriguez'
+      date: "2024-01-15",
+      readTime: "8 min read",
+      category: "Development",
+      author: "Alex Rodriguez",
     },
-    '2': {
-      title: 'The Future of Social Networking',
+    "2": {
+      title: "The Future of Social Networking",
       content: `
         <p>Social networking platforms are evolving rapidly, driven by emerging technologies and changing user expectations. In this article, we explore the trends and technologies that will shape the next generation of social platforms.</p>
         
@@ -50,13 +50,13 @@ const BlogPost = () => {
         
         <p>The social networking landscape is set for significant transformation, and companies that adapt to these changes will lead the next generation of digital communication.</p>
       `,
-      date: '2024-01-10',
-      readTime: '12 min read',
-      category: 'Technology',
-      author: 'Sarah Chen'
+      date: "2024-01-10",
+      readTime: "12 min read",
+      category: "Technology",
+      author: "Sarah Chen",
     },
-    '3': {
-      title: 'Monetization Strategies for Mobile Apps',
+    "3": {
+      title: "Monetization Strategies for Mobile Apps",
       content: `
         <p>Successfully monetizing mobile applications requires a deep understanding of your audience and the right strategy for your app type. This comprehensive guide covers various revenue models and implementation strategies.</p>
         
@@ -74,11 +74,11 @@ const BlogPost = () => {
         
         <p>The key to successful monetization is understanding your users and providing value that they're willing to pay for.</p>
       `,
-      date: '2024-01-05',
-      readTime: '10 min read',
-      category: 'Business',
-      author: 'Michael Johnson'
-    }
+      date: "2024-01-05",
+      readTime: "10 min read",
+      category: "Business",
+      author: "Michael Johnson",
+    },
   };
 
   const post = blogPosts[id as keyof typeof blogPosts];
@@ -90,7 +90,9 @@ const BlogPost = () => {
         <main className="pt-20 px-6">
           <div className="max-w-4xl mx-auto py-16 text-center">
             <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-            <p className="text-gray-400">The blog post you're looking for doesn't exist.</p>
+            <p className="text-gray-400">
+              The blog post you're looking for doesn't exist.
+            </p>
           </div>
         </main>
       </div>
@@ -100,25 +102,31 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Header />
-      
+
       <main className="pt-20 px-6">
         <article className="max-w-4xl mx-auto py-16">
           <div className="mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-blue-400 text-sm font-medium">{post.category}</span>
+              <span className="text-blue-400 text-sm font-medium">
+                {post.category}
+              </span>
               <span className="text-gray-400 text-sm">{post.readTime}</span>
               <span className="text-gray-400 text-sm">{post.date}</span>
             </div>
-            <h1 className="text-4xl font-bold mb-4 leading-tight">{post.title}</h1>
+            <h1 className="text-4xl font-bold mb-4 leading-tight">
+              {post.title}
+            </h1>
             <p className="text-gray-400">By {post.author}</p>
           </div>
-          
-          <div 
+
+          <div
             className="prose prose-invert prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
       </main>
+
+      <Footer />
     </div>
   );
 };
