@@ -1,6 +1,6 @@
 
 import Header from '../components/Header';
-import { Spotify, Youtube } from 'lucide-react';
+import { Music, Youtube } from 'lucide-react';
 
 const Podcasts = () => {
   const episodes = [
@@ -55,7 +55,7 @@ const Podcasts = () => {
                 href="#" 
                 className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors"
               >
-                <Spotify className="w-8 h-8" />
+                <Music className="w-8 h-8" />
               </a>
               <a 
                 href="#" 
